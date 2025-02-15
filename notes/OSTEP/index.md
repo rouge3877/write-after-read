@@ -1,7 +1,6 @@
 ---
 date: 2024-01-01
 title: OSTEP
-layout: default
 ---
 
 # OSTEP: Operating Systems Three Easy Pieces
