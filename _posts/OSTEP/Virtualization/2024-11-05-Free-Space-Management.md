@@ -95,11 +95,11 @@ head->size = 4096 - sizeof(node_t);
 head->next = NULL;
 ```
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241202170955858.png" alt="image-20241202170955858" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241202170955858.png" alt="image-20241202170955858" style="zoom:33%;" />
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241202171012162.png" alt="image-20241202171012162" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241202171012162.png" alt="image-20241202171012162" style="zoom:33%;" />
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241202171048615.png" alt="image-20241202171048615" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241202171048615.png" alt="image-20241202171048615" style="zoom:33%;" />
 
 
 
@@ -178,4 +178,4 @@ The **binary buddy allocator** is a memory allocation technique designed to simp
 5. **Drawbacks**:
    - The system can suffer from **internal fragmentation** due to fixed block sizes.
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241202172522556.png" alt="image-20241202172522556" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241202172522556.png" alt="image-20241202172522556" style="zoom:33%;" />

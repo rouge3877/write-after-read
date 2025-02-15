@@ -31,7 +31,7 @@ to run is on a single queue.
 *   **Rule 1**: If Priority(A) > Priority(B), A runs (B doesn’t).
 *   **Rule 2**: If Priority(A) = Priority(B), A & B run in RR.
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241027160019739.png" alt="image-20241027160019739" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241027160019739.png" alt="image-20241027160019739" style="zoom:45%;" />
 
 Rather than giving a fixed priority to each job, MLFQ *varies* the priority of a job based on its ***observed behavior***.
 
@@ -77,7 +77,7 @@ Rather than giving a fixed priority to each job, MLFQ *varies* the priority of a
 
 On the left, there is no priority boost, and thus the long-running job gets starved once the two short jobs arrive; on the right, there is a priority boost every 100 ms (which is likely too small of a value, but used here for the example),
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241027163213062.png" alt="image-20241027163213062" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241027163213062.png" alt="image-20241027163213062" style="zoom:50%;" />
 
 
 
@@ -91,7 +91,7 @@ Without any protection from gaming (the scheduler with the old Rules 4a and 4b, 
 
 With better accounting in place (the new anti-gaming Rule 4, on the right), regardless of the I/O behavior of the process, it slowly moves down the queues, and thus cannot gain an unfair share of the CPU.
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241027164632910.png" alt="image-20241027164632910" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241027164632910.png" alt="image-20241027164632910" style="zoom:50%;" />
 
 
 
@@ -117,4 +117,4 @@ With better accounting in place (the new anti-gaming Rule 4, on the right), rega
 
 3.   **Lower Priority, Longer Quanta**: Most MLFQ variants allow for varying time-slice length across different queues. The **high-priority queues are usually given short time slices**; they are comprised of interactive jobs, after all, and thus quickly alternating between them makes sense (e.g., 10 or fewer milliseconds). The low-priority queues, in contrast, contain long-running jobs that are CPU-bound; hence, longer time slices work well (e.g., 100s of ms). 
 
-     <img src="https://github.com/rouge3877/ImageHosting/image-20241027165200748.png" alt="image-20241027165200748" style="zoom:50%;" />
+     <img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241027165200748.png" alt="image-20241027165200748" style="zoom:50%;" />

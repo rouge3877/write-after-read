@@ -11,13 +11,13 @@ permalink: /OSTEP/Virtualization/IO-Devices
 
 >   How should I/O be integrated into systems? What are the general mechanisms? How can we make them efficient?
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241202222327963.png" alt="image-20241202222327963" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241202222327963.png" alt="image-20241202222327963" style="zoom:33%;" />
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241202222340617.png" alt="image-20241202222340617" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241202222340617.png" alt="image-20241202222340617" style="zoom:33%;" />
 
 ## 1. A Canonical Device
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241202222423153.png" alt="image-20241202222423153" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241202222423153.png" alt="image-20241202222423153" style="zoom:33%;" />
 
 *   The first is the hardware **interface** it presents to the rest of the system. 
     *   Just like a piece of software, hardware must also present some kind of interface that allows the system software to control its operation. Thus, all devices have some specified interface and protocol for typical interaction
@@ -61,7 +61,7 @@ However, there are some **inefficiencies and inconveniences involved**.
 
 *With **PIO**, the CPU spends too much time moving data to and from devices by hand. How can we offload this work and thus allow the CPU to be more effectively utilized?*
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241202223257082.png" alt="image-20241202223257082" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241202223257082.png" alt="image-20241202223257082" style="zoom:33%;" />
 
 ## 3. Methods Of Device Interaction
 
@@ -72,7 +72,7 @@ However, there are some **inefficiencies and inconveniences involved**.
 
 ## 4. Fitting Into The OS: The Device Driver (abstraction)
 
-<img src="https://github.com/rouge3877/ImageHosting/image-20241202223456933.png" alt="image-20241202223456933" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/rouge3877/ImageHosting/main/image-20241202223456933.png" alt="image-20241202223456933" style="zoom:50%;" />
 
 *The diagram also shows a **raw** interface to devices, which enables special applications (such as a file-system checker, described later, or a disk defragmentation tool) to directly read and write **blocks** without using the file abstraction.*
 
