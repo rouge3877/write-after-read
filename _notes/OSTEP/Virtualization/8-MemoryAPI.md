@@ -5,7 +5,7 @@ permalink: /OSTEP/Virtualization/MemoryAPI
 ---
 
 
-# 8-: Memory API
+# 8-Memory API
 
 ## **THE CRUX: HOW TO ALLOCATE AND MANAGE MEMORY**
 

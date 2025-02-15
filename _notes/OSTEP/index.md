@@ -20,7 +20,8 @@ The book is available for free online at [http://pages.cs.wisc.edu/~remzi/OSTEP/
 
 - [1 - Processes](./OSTEP/Virtualization/Processes)
 - [2 - Process API](./OSTEP/Virtualization/ProcessAPI)
-- [3 - Mechanism: Address Translation](./OSTEP/Virtualization/Mechanism-Address-Translation)
+- [3 - Mechanism: Limited Direct Execution](./OSTEP/Virtualization/Limited-Direct-Execution)
+
 
 ## Concurrency
 

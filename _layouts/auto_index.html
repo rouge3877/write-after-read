@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<h1>{{ page.title | default: page.dir | split: '/' | last }}</h1>
+
+<!-- 列出子目录 -->
+<ul>
+  {% for subdir in site.notes | group_by: "dir" %}
+    {% assign dir_depth = subdir.name | split: '/' | size %}
+    {% assign current_depth = page.dir | split: '/' | size %}
+    {% if subdir.name contains page.dir and dir_depth == current_depth + 1 %}
+      <li>
+        <a href="{{ subdir.name | relative_url }}">{{ subdir.name | remove: page.dir | split: '/' | first }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<!-- 列出当前目录下的文件 -->
+<ul>
+  {% for doc in site.notes %}
+    {% if doc.dir == page.dir and doc.name != "index.md" %}
+      <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
