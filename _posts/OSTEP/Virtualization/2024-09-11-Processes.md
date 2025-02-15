@@ -42,7 +42,7 @@ The **process** is the major OS abstraction of a running program. At any point i
 
 ## 3. Process Creation
 
-<img src="../../../assets/image-20240911173700071.png" alt="image-20240911173700071" style="zoom:33%;" />
+<img src="https://github.com/rouge3877/ImageHosting/image-20240911173700071.png" alt="image-20240911173700071" style="zoom:33%;" />
 
 1.    **Load** program's code and any static data (e.g., initialized variables) into memory
      *   Programs initially reside on disk (or, in some modern systems, flash-based SSDs) in some kind of executable format
@@ -66,7 +66,7 @@ The **process** is the major OS abstraction of a running program. At any point i
 
 Three States: a simplified view
 
-<img src="../../../assets/image-20240911175029604.png" alt="State Transitions" style="zoom:33%;" />
+<img src="https://github.com/rouge3877/ImageHosting/image-20240911175029604.png" alt="State Transitions" style="zoom:33%;" />
 
 1.   **Running**: A process is running on a processor
 2.   **Ready**: A process is ready to run, but OS has chosen not to run it

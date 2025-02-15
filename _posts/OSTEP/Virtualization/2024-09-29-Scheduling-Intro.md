@@ -54,11 +54,11 @@ We knew **job lengths**, and that jobs **only used the CPU**, and our only metri
 *   🙂Very Simple Example: 
     *   `A` arrived just a hair before `B` which arrived just a hair before `C`. And each job runs for 10 seconds
     *   The average turnaround time: $T_{turnaround} = (10 +20+30)/3 = 20$
-    *   <img src="../../../assets/image-20240929171416961.png" alt="image-20240929171416961" style="zoom:33%;" />
+    *   <img src="https://github.com/rouge3877/ImageHosting/image-20240929171416961.png" alt="image-20240929171416961" style="zoom:33%;" />
 *   😰Example which ***RELAX*** assumption 1:
     *    `A` arrived just a hair before `B` which arrived just a hair before `C`. And `A` runs for 100 seconds while `B` and `C` run for 10 each
     *   The average turnaround time: $T_{turnaround} = (100 +110+120)/3 = 110$
-    *   <img src="../../../assets/image-20240929171858925.png" alt="image-20240929171858925" style="zoom:33%;" />
+    *   <img src="https://github.com/rouge3877/ImageHosting/image-20240929171858925.png" alt="image-20240929171858925" style="zoom:33%;" />
 
 ### 3.2 Shortest Job First (SJF)
 
@@ -69,14 +69,14 @@ We knew **job lengths**, and that jobs **only used the CPU**, and our only metri
     *    `A` arrived just a hair before `B` which arrived just a hair before `C`. And `A` runs for 100 seconds while `B` and `C` run for 10 each
 
     *   The average turnaround time: $T_{turnaround} = (120 +10+20)/3 = 50$
-    *   <img src="../../../assets/image-20240929172222028.png" alt="image-20240929172222028" style="zoom:33%;" />
+    *   <img src="https://github.com/rouge3877/ImageHosting/image-20240929172222028.png" alt="image-20240929172222028" style="zoom:33%;" />
 
 *   😰Example which ***RELAX*** assumption 1 & 2:
 
     *   `A` arrives at $t = 0$ and needs to run for 100 seconds, whereas `B` and `C` arrive at $t = 10$ and each need to run for 10 second
 
     *   The average turnaround time: $T_{turnaround} = [100 + (110-20)+(120-10)]/3 = 103.3$
-    *   <img src="../../../assets/image-20240929172738367.png" alt="image-20240929172738367" style="zoom:33%;" />
+    *   <img src="https://github.com/rouge3877/ImageHosting/image-20240929172738367.png" alt="image-20240929172738367" style="zoom:33%;" />
 
 ### 3.3 Shortest Time-to-Completion First (STCF)
 
@@ -94,7 +94,7 @@ We knew **job lengths**, and that jobs **only used the CPU**, and our only metri
 
     *   The average turnaround time: $T_{turnaround} = [(120 - 0) + (20 - 10)+(30-10)]/3 = 50$
 
-    *   <img src="../../../assets/image-20240929173601196.png" alt="image-20240929173601196" style="zoom:33%;" />
+    *   <img src="https://github.com/rouge3877/ImageHosting/image-20240929173601196.png" alt="image-20240929173601196" style="zoom:33%;" />
 
 
 
@@ -109,7 +109,7 @@ We knew **job lengths**, and that jobs **only used the CPU**, and our only metri
 *   😰Above policies are Bad for Response Time
     *   `A`, `B`, and `C` arrive at the same time in the system, and that they each wish to run for 5 seconds
     *   The average response time: $T = (0 + 5 + 10) / 3 = 5$
-    *   <img src="../../../assets/image-20240929174354333.png" alt="image-20240929174354333" style="zoom:33%;" />
+    *   <img src="https://github.com/rouge3877/ImageHosting/image-20240929174354333.png" alt="image-20240929174354333" style="zoom:33%;" />
 
 ## 5.  Build a `Response-Time` friendly Scheduler
 
@@ -130,7 +130,7 @@ We knew **job lengths**, and that jobs **only used the CPU**, and our only metri
     *   `A`, `B`, and `C` arrive at the same time in the system, and that they each wish to run for 5 seconds
     *   ***RR with a time-slice of 1 second would cycle through the jobs quickly***
     *   The average response time: $T = (0 + 1 + 2) / 3 = 5$
-    *   <img src="../../../assets/image-20240929174415385.png" alt="image-20240929174415385" style="zoom:33%;" />
+    *   <img src="https://github.com/rouge3877/ImageHosting/image-20240929174415385.png" alt="image-20240929174415385" style="zoom:33%;" />
 *   😰RR is Bad For **Turnaround Time**
     *   More generally, any policy (such as RR) that is fair, i.e., that evenly divides the CPU among active processes on a small time scale, will perform poorly on metrics such as turnaround time. 
     *   **Performance and fairness are often at odds in scheduling.**

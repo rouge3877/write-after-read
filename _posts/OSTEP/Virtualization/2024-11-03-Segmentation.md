@@ -46,7 +46,7 @@ permalink: /OSTEP/Virtualization/Segmentation
 
      2.   >   In our example, then, if the top two bits are 00, the hardware knows the virtual address is in the code segment, and thus uses the code base and bounds pair to relocate the address to the correct physical location. If the top two bits are 01, the hardware knows the address is in the heap, and thus uses the heap base and bounds. Let’s take our example heap virtual address from above (4200) and translate it, just to make sure this is clear. The virtual address 4200, in binary form, can be seen here:
           >
-          >   <img src="../../../assets/image-20241202145206626.png" alt="image-20241202145206626" style="zoom:33%;" />
+          >   <img src="https://github.com/rouge3877/ImageHosting/image-20241202145206626.png" alt="image-20241202145206626" style="zoom:33%;" />
 
      3.   ```c
           // get top 2 bits of 14-bit VA
@@ -121,4 +121,4 @@ The goal of fine-grained segmentation is to improve memory usage and system perf
          *   first-fit
          *   buddy algorithm
 
-<img src="../../../assets/image-20241202151038210.png" alt="image-20241202151038210" style="zoom:50%;" />
+<img src="https://github.com/rouge3877/ImageHosting/image-20241202151038210.png" alt="image-20241202151038210" style="zoom:50%;" />
