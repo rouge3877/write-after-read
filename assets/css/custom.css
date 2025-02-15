@@ -1,0 +1,75 @@
+/* 页面布局调整 */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  section {
+    font-size: 18px;
+    line-height: 1.7;
+    padding: 20px 0;
+  }
+  
+  /* 路径导航样式 */
+  .path-nav {
+    margin: 0 0 2rem;
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 6px;
+  }
+  
+  nav[aria-label="Breadcrumb"] {
+    font-size: 16px;
+  }
+  
+  .breadcrumb-item a {
+    color: #58a6ff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  
+  .breadcrumb-item a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+  
+  .breadcrumb-separator {
+    color: #6e7681;
+    margin: 0 4px;
+  }
+  
+  /* GitHub个人链接 */
+  .github-profile-link {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #30363d;
+  }
+  
+  .github-profile-link a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c9d1d9;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .github-profile-link a:hover {
+    color: #58a6ff;
+  }
+  
+  .github-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* 增大标题字体 */
+  h1, h2, h3 {
+    font-weight: 600;
+    margin: 1.5em 0 1em;
+  }
+  
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.8em; }
+  h3 { font-size: 1.5em; }
