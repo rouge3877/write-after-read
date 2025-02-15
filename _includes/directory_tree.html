@@ -1,0 +1,27 @@
+{% comment %} _includes/directory_tree.html {% endcomment %}
+{% assign current_path = include.path | default: '/' %}
+{% assign pages = site.html_pages | sort: 'url' %}
+
+<ul class="directory-list">
+  {% for page in pages %}
+    {% if page.dir == current_path and page.name != 'index.html' %}
+      <li>
+        <a href="{{ page.url }}">{{ page.title | default: page.name }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+
+  {% assign subdirs = pages | map: 'dir' | uniq | sort %}
+  {% for subdir in subdirs %}
+    {% if subdir != current_path and subdir contains current_path %}
+      {% assign depth = current_path | split: '/' | size %}
+      {% assign subdir_depth = subdir | split: '/' | size %}
+      {% if subdir_depth == depth | plus: 1 %}
+        <li>
+          <a href="{{ subdir }}">{{ subdir | remove: current_path | split: '/' | first }}/</a>
+          {% include directory_tree.html path=subdir %}
+        </li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</ul>

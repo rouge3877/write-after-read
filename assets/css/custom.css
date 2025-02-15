@@ -1,0 +1,31 @@
+/* assets/css/custom.css */
+.custom-directory {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+  }
+  
+  .custom-directory h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .directory-list {
+    list-style: none;
+    padding-left: 1rem;
+  }
+  
+  .directory-list li {
+    margin: 0.3rem 0;
+  }
+  
+  .directory-list a {
+    color: #0366d6;
+    text-decoration: none;
+  }
+  
+  .directory-list a:hover {
+    text-decoration: underline;
+  }
