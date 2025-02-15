@@ -1,3 +1,10 @@
+---
+date: 2024-11-05
+title: Free Space Management
+permalink: /OSTEP/Virtualization/Free-Space-Management
+---
+
+
 # 11-[Free Space Management](https://pages.cs.wisc.edu/~remzi/OSTEP/vm-freespace.pdf)
 
 ## THE CRUX: HOW TO MANAGE FREE SPACE

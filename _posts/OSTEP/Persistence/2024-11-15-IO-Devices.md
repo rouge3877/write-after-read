@@ -1,3 +1,10 @@
+---
+date: 2024-11-15
+title: IO Devices
+permalink: /OSTEP/Virtualization/IO-Devices
+---
+
+
 # 1-I/O Devices
 
 ## **CRUX: HOW TO INTEGRATE I/O INTO SYSTEMS**

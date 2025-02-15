@@ -2,7 +2,6 @@
 date: 2024-09-21
 title: Limited Direct Execution
 permalink: /OSTEP/Virtualization/%title%
-layout: post
 ---
 
 # 3-Mechanism: Limited Direct Execution
