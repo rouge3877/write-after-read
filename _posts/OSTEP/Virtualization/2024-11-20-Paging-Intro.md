@@ -31,7 +31,7 @@ To chop up space into **fixed-sized pieces**. In virtual memory, we call this id
    - For a 64-byte address space with 16-byte pages, the VPN is 2 bits, and the offset is 4 bits.
    - To translate a virtual address, the system looks up the VPN in the page table to find the corresponding physical frame, then combines it with the offset to form the physical address.
 
-<img src="../.assets/image-20241202184027307.png" alt="image-20241202184027307" style="zoom:33%;" /><img src="../.assets/image-20241202184043864.png" alt="image-20241202184043864" style="zoom:33%;" />
+<img src="../../../assets/image-20241202184027307.png" alt="image-20241202184027307" style="zoom:33%;" /><img src="../../../assets/image-20241202184043864.png" alt="image-20241202184043864" style="zoom:33%;" />
 
 
 
@@ -52,7 +52,7 @@ To chop up space into **fixed-sized pieces**. In virtual memory, we call this id
 
 ## 3. What’s Actually In The Page Table?
 
-<img src="../.assets/image-20241202184310012.png" alt="image-20241202184310012" style="zoom:50%;" />
+<img src="../../../assets/image-20241202184310012.png" alt="image-20241202184310012" style="zoom:50%;" />
 
 1. **Page Table Overview**:
    - The **page table** maps **virtual page numbers (VPN)** to **physical frame numbers (PFN)**.
@@ -101,4 +101,4 @@ PTE = AccessMemory(PTEAddr)
      Register = AccessMemory(PhysAddr)
 ```
 
-<img src="../.assets/image-20241202185036817.png" alt="image-20241202185036817" style="zoom:50%;" />
+<img src="../../../assets/image-20241202185036817.png" alt="image-20241202185036817" style="zoom:50%;" />

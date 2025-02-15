@@ -52,7 +52,7 @@ Imagine two processes, A and B, and further that A has 75 tickets while B has on
 
 ## 3. Implementation
 
-Keep process in a List: <img src="../.assets/image-20241027172239735.png" alt="image-20241027172239735" style="zoom:33%;" />
+Keep process in a List: <img src="../../../assets/image-20241027172239735.png" alt="image-20241027172239735" style="zoom:33%;" />
 
 ```c
 // counter: used to track if we’ve found the winner yet
@@ -161,7 +161,7 @@ $$
 
 *   $O(n)$ operation $\rightarrow$ $O(\log n)$ operation
 
-    <img src="../.assets/image-20241027182740474.png" alt="image-20241027182740474" style="zoom:33%;" />
+    <img src="../../../assets/image-20241027182740474.png" alt="image-20241027182740474" style="zoom:33%;" />
 
 ### 6.4 Dealing With I/O And Sleeping Processes
 
