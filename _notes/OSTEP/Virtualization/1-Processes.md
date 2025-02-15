@@ -1,7 +1,7 @@
 ---
 date: 2024-09-11
 title: Processes
-permalink: /OSTEP/Virtualization/Processes
+
 ---
 
 # 1-Processes

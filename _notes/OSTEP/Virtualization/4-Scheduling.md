@@ -1,7 +1,7 @@
 ---
 date: 2024-09-29
 title: Schedulingc Introduction
-permalink: /OSTEP/Virtualization/Schedulingc-Introduction
+
 ---
 
 # 4-Scheduling: Introduction

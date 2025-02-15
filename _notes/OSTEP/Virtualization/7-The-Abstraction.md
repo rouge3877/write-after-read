@@ -1,7 +1,7 @@
 ---
 date: 2024-10-29
 title: Address Spaces
-permalink: /OSTEP/Virtualization/Address-Spaces
+
 ---
 
 

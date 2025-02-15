@@ -1,7 +1,7 @@
 ---
 date: 2024-11-05
 title: Free Space Management
-permalink: /OSTEP/Virtualization/Free-Space-Management
+
 ---
 
 

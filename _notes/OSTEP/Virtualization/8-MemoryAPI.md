@@ -1,7 +1,7 @@
 ---
 date: 2024-10-31
 title: MemoryAPI
-permalink: /OSTEP/Virtualization/MemoryAPI
+
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 date: 2024-11-03
 title: Segmentation
-permalink: /OSTEP/Virtualization/Segmentation
+
 ---
 
 # 10-[Segmentation](https://pages.cs.wisc.edu/~remzi/OSTEP/vm-segmentation.pdf)

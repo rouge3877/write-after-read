@@ -1,7 +1,7 @@
 ---
 date: 2024-10-30
 title: Mechanism-Address-Translation
-permalink: /OSTEP/Virtualization/Mechanism-Address-Translation
+
 ---
 
 # 9-Mechanism: [Address Translation](https://pages.cs.wisc.edu/~remzi/OSTEP/vm-mechanism.pdf)

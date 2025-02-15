@@ -1,7 +1,7 @@
 ---
 date: 2024-10-28
 title: Scheduling Lottery
-permalink: /OSTEP/Virtualization/Scheduling-Lottery
+
 ---
 
 # 6-Scheduling: Proportional Share
