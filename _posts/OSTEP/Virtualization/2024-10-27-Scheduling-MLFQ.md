@@ -1,7 +1,7 @@
 ---
 date: 2024-10-27
-title: Schedulingc Introduction
-permalink: /OSTEP/Virtualization/Schedulingc-Introduction
+title: Scheduling MLFQ
+permalink: /OSTEP/Virtualization/Scheduling-MLFQ
 ---
 
 # 5-Scheduling: Multi-Level Feedback Queue

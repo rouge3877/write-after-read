@@ -1,7 +1,7 @@
 ---
 date: 2024-09-21
 title: Limited Direct Execution
-permalink: /OSTEP/Virtualization/%title%
+permalink: /OSTEP/Virtualization/Limited-Direct-Execution
 ---
 
 # 3-Mechanism: Limited Direct Execution
