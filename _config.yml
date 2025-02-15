@@ -8,3 +8,12 @@ collections:
     permalink: /:path/:title/  # URL 按文件路径和标题生成
 
 permalink: /:path/:title/
+
+# _config.yml
+markdown: kramdown   # 必须使用 kramdown 解析器
+highlighter: rouge   # 启用 rouge 语法高亮
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'  # 代码块 CSS 类名
+    default_lang: text      # 未指定语言时的默认渲染

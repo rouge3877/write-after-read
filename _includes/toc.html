@@ -1,0 +1,15 @@
+{% raw %}
+<!-- _includes/toc.html -->
+{% assign html = include.html %}
+{% assign headings = html | split: '<h' %}
+<ul>
+{% for heading in headings %}
+  {% assign level = heading | slice: 0 %}
+  {% assign id = heading | split: 'id="' | last | split: '"' | first %}
+  {% assign title = heading | split: '</h' | first | split: '>' | last %}
+  {% if level == "2" %}
+    <li><a href="#{{ id }}">{{ title }}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+{% endraw %}
