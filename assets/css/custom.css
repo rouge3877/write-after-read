@@ -1,58 +1,159 @@
-/* assets/css/custom.css */
-/* 路径导航系统 */
+/* ===== 全局布局调整 ===== */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ===== 路径导航系统 ===== */
 .path-nav {
-  background: rgba(30, 32, 44, 0.97);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 1.2rem;
-  margin: 1.5rem 0;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 4px 25px rgba(0,0,0,0.25);
+  background: rgba(30, 32, 45, 0.98);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.path-nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(189,147,249,0.1), transparent);
+  pointer-events: none;
 }
 
 .breadcrumb {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  font-size: 15px;
+  gap: 0.6rem;
+  font-size: 1.1rem;
 }
 
-.breadcrumb a {
-  color: #bd93f9;
+.home-link {
+  color: #bd93f9 !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background: rgba(189,147,249,0.1);
+}
+
+.path-link {
+  color: #f8f8f2 !important;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
+  background: rgba(255,255,255,0.05);
 }
 
-.breadcrumb a:hover {
-  background: rgba(189, 147, 249, 0.08);
+.path-link:hover {
+  background: rgba(189,147,249,0.15);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189,147,249,0.2);
 }
 
-.breadcrumb a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: currentColor;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.breadcrumb a:hover::after {
-  transform: scaleX(1);
+.separator {
+  color: rgba(255,255,255,0.3);
+  margin: 0 0.5rem;
+  font-weight: 300;
 }
 
 .current-segment {
-  color: #fff;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  background: rgba(189,147,249,0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(189,147,249,0.3);
+}
+
+/* ===== GitHub 个人资料卡片 ===== */
+.profile-card {
+  margin-top: 2rem;
+  background: rgba(68,71,90,0.6);
+  border-radius: 12px;
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-3px);
+  background: rgba(68,71,90,0.8);
+}
+
+.github-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.github-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-size: 1.1rem;
+  color: #f8f8f2;
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  background: rgba(255,255,255,0.07);
-  border-radius: 8px;
+}
+
+.view-text {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+  .wrapper {
+      padding: 0 1rem;
+  }
+
+  .path-nav {
+      padding: 1rem;
+      margin: 1.5rem 0;
+  }
+
+  .breadcrumb {
+      font-size: 1rem;
+      gap: 0.4rem;
+  }
+
+  .home-link {
+      padding: 0.5rem 1rem;
+  }
+
+  .current-segment {
+      padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .separator {
+      display: none;
+  }
+
+  .breadcrumb {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .path-link {
+      margin-left: 1rem;
+  }
 }

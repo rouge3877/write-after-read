@@ -1,6 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en-US' }}">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {% seo %}
@@ -12,67 +12,86 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     {% include head-custom.html %}
-  </head>
-  <body>
+</head>
+<body>
     <div class="wrapper">
-      <header>
-        <!-- 重构路径导航逻辑 -->
-        <div class="path-nav">
-          <nav class="breadcrumb">
-            {% comment %} 基础路径处理 {% endcomment %}
-            {% assign base_path = site.baseurl | default: '' %}
-            <a href="{{ base_path | relative_url }}">Home</a>
-            
-            {% comment %} 解析实际内容路径 {% endcomment %}
-            {% assign content_path = page.dir | remove_first: base_path | split: '/' %}
-            
-            {% assign accumulated_path = base_path %}
-            {% for segment in content_path %}
-              {% if segment != "" %}
-                {% assign accumulated_path = accumulated_path | append: '/' | append: segment %}
-                <span class="separator">/</span>
-                
-                {% comment %} 判断是否最终路径段 {% endcomment %}
-                {% if forloop.last %}
-                  <span class="current-segment">
-                    {{ segment | replace: '-', ' ' | capitalize }}
-                  </span>
-                {% else %}
-                  <a href="{{ accumulated_path | append: '/' | relative_url }}">
-                    {{ segment | replace: '-', ' ' | capitalize }}
-                  </a>
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-          </nav>
-        </div>
+        <header>
+            <!-- 完全重构的路径导航系统 -->
+            <div class="path-nav">
+                <nav class="breadcrumb">
+                    {% comment %} 基础路径处理 {% endcomment %}
+                    {% assign base_path = site.baseurl | default: '' %}
+                    <a href="{{ '/' | relative_url }}" class="home-link">🏠 Home</a>
+                    
+                    {% comment %} 解析实际内容路径 {% endcomment %}
+                    {% assign full_path = page.dir | remove_first: base_path %}
+                    {% assign path_segments = full_path | split: '/' %}
+                    
+                    {% assign accumulated_path = base_path %}
+                    {% for segment in path_segments %}
+                        {% if segment != "" %}
+                            {% assign accumulated_path = accumulated_path | append: '/' | append: segment %}
+                            <span class="separator">›</span>
+                            
+                            {% if forloop.last %}
+                                <span class="current-segment">
+                                    {{ segment | replace: '-', ' ' | capitalize }}
+                                </span>
+                            {% else %}
+                                <a href="{{ accumulated_path | append: '/' | relative_url }}" class="path-link">
+                                    {{ segment | replace: '-', ' ' | capitalize }}
+                                </a>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </nav>
+            </div>
 
-        <!-- GitHub个人链接保持不变 -->
-        <div class="profile-link">
-          <a href="https://github.com/rouge_3877" target="_blank">
-            <svg class="github-icon" viewBox="0 0 16 16" width="16" height="16">
-              <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19..."/>
-            </svg>
-            <span>GitHub Profile</span>
-          </a>
-        </div>
+            <!-- GitHub 个人链接 -->
+            <div class="profile-card">
+                <a href="https://github.com/rouge_3877" target="_blank" rel="noopener">
+                    <div class="github-profile">
+                        <svg class="github-icon" viewBox="0 0 16 16" width="20" height="20">
+                            <path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        <div class="profile-info">
+                            <span class="username">@rouge_3877</span>
+                            <span class="view-text">View Profile</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-        {% if site.show_downloads %}
-          <ul>
-            <li class="download"><a class="buttons" href="{{ site.github.zip_url }}">ZIP</a></li>
-            <li class="download"><a class="buttons" href="{{ site.github.tar_url }}">TAR</a></li>
-          </ul>
-        {% endif %}
-      </header>
+            {% if site.show_downloads %}
+                <div class="downloads">
+                    <a href="{{ site.github.zip_url }}" class="download-button">
+                        📦 Download ZIP
+                    </a>
+                    <a href="{{ site.github.tar_url }}" class="download-button">
+                        📁 Download TAR
+                    </a>
+                </div>
+            {% endif %}
+        </header>
 
-      <section>
-        {{ content }}
-      </section>
+        <section class="content">
+            {{ content }}
+        </section>
 
-      <footer>
-        <p><small>Hosted on GitHub Pages</small></p>
-      </footer>
+        <footer>
+            <p class="footer-text">🚀 Powered by GitHub Pages</p>
+        </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-  </body>
+    <script>
+        // 简单的悬浮效果增强
+        document.querySelectorAll('.path-link').forEach(link => {
+            link.addEventListener('mouseover', () => {
+                link.style.transform = 'translateX(5px)';
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.transform = 'none';
+            });
+        });
+    </script>
+</body>
 </html>
