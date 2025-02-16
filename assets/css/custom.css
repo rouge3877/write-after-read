@@ -1,103 +1,165 @@
-/* 整体布局调整 */
+/* ===== 全局容器美化 ===== */
 .wrapper {
-  max-width: 2000px;
-  margin: 20px auto; /* 居中并添加上下间隔 */
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
-  border-radius: 12px; /* 圆角矩形 */
-  backdrop-filter: blur(5px); /* 仅模糊背景框 */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
 }
 
-/* 取消过度放大效果，仅在悬停时调整背景透明度 */
-.wrapper:hover {
-  background: rgba(255, 255, 255, 0.9);
+/* ===== 导航栏高级美化 ===== */
+.path-nav {
+  background: rgba(40, 42, 54, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-/* 移动端样式调整 */
-@media (max-width: 768px) {
-  .wrapper {
-    margin: 10px;
-    padding: 15px;
-    border-radius: 8px;
+/* 毛玻璃效果兼容性处理 */
+@supports not (backdrop-filter: blur(10px)) {
+  .path-nav {
+    background: rgba(40, 42, 54, 0.95);
   }
 }
 
-/* ...existing code... */
-
-/* 路径导航修复 */
-.path-nav {
-  width: 220px;
-  margin: 0 0 1.5rem;
-  padding: 12px;
-  background: rgba(40, 42, 54, 0.9);
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
+/* 面包屑导航动态效果 */
 .breadcrumb {
-  font-size: 14px;
-  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .breadcrumb a {
   color: #bd93f9;
   text-decoration: none;
-  transition: opacity 0.2s;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .breadcrumb a:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+  background: rgba(189, 147, 249, 0.1);
+  transform: translateY(-1px);
+}
+
+.breadcrumb a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #bd93f9;
+  transition: width 0.3s ease;
+}
+
+.breadcrumb a:hover::after {
+  width: 100%;
 }
 
 .separator {
-  color: #6272a4;
-  margin: 0 4px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0.3rem;
 }
 
 .current-segment {
   color: #f8f8f2;
   font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
 }
 
-/* 个人链接样式 */
+/* ===== GitHub 个人链接美化 ===== */
 .profile-link {
   margin-top: 1.5rem;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 0.8rem;
+  border-radius: 10px;
   background: rgba(68, 71, 90, 0.6);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.profile-link:hover {
+  transform: translateX(5px);
+  background: rgba(68, 71, 90, 0.8);
 }
 
 .profile-link a {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.8rem;
   color: #f8f8f2;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 0.95rem;
 }
 
 .github-icon {
-  fill: currentColor;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
 }
 
-/* 内容区域调整 */
-section {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-left: 20px;
+.profile-link:hover .github-icon {
+  transform: rotate(10deg) scale(1.1);
 }
 
-h1 { font-size: 1.8em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.3em; }
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 15px;
+  }
 
-/* 下载按钮优化 */
-.download .buttons {
-  padding: 6px 12px;
-  font-size: 13px;
+  .path-nav {
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .breadcrumb a {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .profile-link {
+    margin-top: 1rem;
+    padding: 0.6rem;
+  }
+
+  .profile-link a span {
+    display: none;
+  }
+
+  .profile-link a::after {
+    content: "GitHub";
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .path-nav {
+    margin: 0.5rem 0;
+  }
+
+  .separator {
+    margin: 0 0.2rem;
+  }
+
+  .current-segment {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== 微交互动画 ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.profile-link:hover {
+  animation: float 1.5s ease-in-out infinite;
 }
