@@ -1,75 +1,82 @@
-/* 页面布局调整 */
+/* 整体布局调整 */
 .wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-  
-  section {
-    font-size: 18px;
-    line-height: 1.7;
-    padding: 20px 0;
-  }
-  
-  /* 路径导航样式 */
-  .path-nav {
-    margin: 0 0 2rem;
-    padding: 12px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 6px;
-  }
-  
-  nav[aria-label="Breadcrumb"] {
-    font-size: 16px;
-  }
-  
-  .breadcrumb-item a {
-    color: #58a6ff;
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
-  
-  .breadcrumb-item a:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-  }
-  
-  .breadcrumb-separator {
-    color: #6e7681;
-    margin: 0 4px;
-  }
-  
-  /* GitHub个人链接 */
-  .github-profile-link {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #30363d;
-  }
-  
-  .github-profile-link a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #c9d1d9;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  
-  .github-profile-link a:hover {
-    color: #58a6ff;
-  }
-  
-  .github-icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  /* 增大标题字体 */
-  h1, h2, h3 {
-    font-weight: 600;
-    margin: 1.5em 0 1em;
-  }
-  
-  h1 { font-size: 2.2em; }
-  h2 { font-size: 1.8em; }
-  h3 { font-size: 1.5em; }
+  max-width: 1000px;
+  margin-left: 5%;
+  padding: 0 20px;
+}
+
+/* 路径导航修复 */
+.path-nav {
+  width: 220px;
+  margin: 0 0 1.5rem;
+  padding: 12px;
+  background: rgba(40, 42, 54, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.breadcrumb {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.breadcrumb a {
+  color: #bd93f9;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.breadcrumb a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.separator {
+  color: #6272a4;
+  margin: 0 4px;
+}
+
+.current-segment {
+  color: #f8f8f2;
+  font-weight: 500;
+}
+
+/* 个人链接样式 */
+.profile-link {
+  margin-top: 1.5rem;
+  padding: 10px;
+  border-radius: 6px;
+  background: rgba(68, 71, 90, 0.6);
+}
+
+.profile-link a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f8f8f2;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.github-icon {
+  fill: currentColor;
+  width: 18px;
+  height: 18px;
+}
+
+/* 内容区域调整 */
+section {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-left: 20px;
+}
+
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
+
+/* 下载按钮优化 */
+.download .buttons {
+  padding: 6px 12px;
+  font-size: 13px;
+}
