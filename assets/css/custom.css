@@ -3,10 +3,6 @@
   max-width: 2000px;
   margin-left: 0%;
   padding: 0 20px;
-  
-  /* modified to be transparent and hidden */
-  opacity: 0;
-  display: none;
 }
 
 /* assets/css/custom.css */
