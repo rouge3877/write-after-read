@@ -1,18 +1,17 @@
 /* 整体布局调整 */
-/* 整体布局调整 */
 .wrapper {
   max-width: 2000px;
   margin: 20px auto; /* 居中并添加上下间隔 */
   padding: 20px;
   background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
   border-radius: 12px; /* 圆角矩形 */
-  backdrop-filter: blur(5px); /* 高斯模糊效果 */
+  backdrop-filter: blur(5px); /* 仅模糊背景框 */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: background 0.3s ease;
 }
 
+/* 取消过度放大效果，仅在悬停时调整背景透明度 */
 .wrapper:hover {
-  transform: scale(1.02); /* 鼠标悬停时略微放大 */
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -24,6 +23,8 @@
     border-radius: 8px;
   }
 }
+
+/* ...existing code... */
 
 /* 路径导航修复 */
 .path-nav {
