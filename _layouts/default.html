@@ -18,12 +18,17 @@
       <header>
         <!-- 修复后的路径导航 -->
         <div class="path-nav">
+          {% comment %} 新增仓库名路径段 {% endcomment %}
+          {% assign base_segments = site.baseurl | split: '/' %}
           {% assign path_segments = page.dir | split: '/' %}
-          {% assign accumulated_path = "" %}
+          
+          {% comment %} 合并基础路径和页面路径 {% endcomment %}
+          {% assign all_segments = base_segments | concat: path_segments | uniq %}
           
           <nav class="breadcrumb">
-            <a href="/">Home</a>
-            {% for segment in path_segments %}
+            <a href="{{ '/' | relative_url }}">Home</a>
+            {% assign accumulated_path = "" %}
+            {% for segment in all_segments %}
               {% if segment != "" %}
                 {% assign accumulated_path = accumulated_path | append: '/' | append: segment %}
                 <span class="separator">/</span>

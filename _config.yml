@@ -20,3 +20,6 @@ kramdown:
 
 head_scripts:
   - /assets/css/custom.css  # 新增自定义样式
+
+baseurl: "/write-after-read"  # 关键配置：设置基础路径
+  
