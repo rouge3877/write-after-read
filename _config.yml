@@ -22,5 +22,4 @@ head_scripts:
   - /assets/css/custom.css  # 新增自定义样式
 
 # _config.yml
-baseurl: "/write-after-read"  # 保持此项配置
 url: "https://rouge3877.github.io"
