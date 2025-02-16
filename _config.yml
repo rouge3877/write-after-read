@@ -23,4 +23,4 @@ head_scripts:
 
 # _config.yml
 url: "https://rouge3877.github.io"
-baseurl: "/"
+baseurl: "https://rouge3877.github.io/"
