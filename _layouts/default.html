@@ -17,34 +17,37 @@
     <div class="wrapper">
         <header>
             <!-- 完全重构的路径导航系统 -->
+            <!-- _layouts/default.html 关键部分 -->
             <div class="path-nav">
-                <nav class="breadcrumb">
-                    {% comment %} 基础路径处理 {% endcomment %}
-                    {% assign base_path = site.baseurl | default: '' %}
-                    <a href="{{ '/' | relative_url }}" class="home-link">🏠 Home</a>
-                    
-                    {% comment %} 解析实际内容路径 {% endcomment %}
-                    {% assign full_path = page.dir | remove_first: base_path %}
-                    {% assign path_segments = full_path | split: '/' %}
-                    
-                    {% assign accumulated_path = base_path %}
-                    {% for segment in path_segments %}
-                        {% if segment != "" %}
-                            {% assign accumulated_path = accumulated_path | append: '/' | append: segment %}
-                            <span class="separator">›</span>
-                            
-                            {% if forloop.last %}
-                                <span class="current-segment">
-                                    {{ segment | replace: '-', ' ' | capitalize }}
-                                </span>
-                            {% else %}
-                                <a href="{{ accumulated_path | append: '/' | relative_url }}" class="path-link">
-                                    {{ segment | replace: '-', ' ' | capitalize }}
-                                </a>
-                            {% endif %}
-                        {% endif %}
-                    {% endfor %}
-                </nav>
+              <nav class="breadcrumb">
+                  {% comment %} 路径解析新方案 {% endcomment %}
+                  {% assign base_path = site.baseurl | default: '' %}
+                  {% assign clean_path = page.dir | replace: base_path, '' %}
+                  
+                  <a href="{{ '/' | relative_url }}" class="home-link">🏠 Home</a>
+                  
+                  {% comment %} 智能分割路径段 {% endcomment %}
+                  {% assign path_segments = clean_path | split: '/' | compact %}
+                  
+                  {% assign current_path = base_path %}
+                  {% for segment in path_segments %}
+                      {% if segment != "" %}
+                          {% assign current_path = current_path | append: '/' | append: segment %}
+                          <span class="separator">›</span>
+                          
+                          {% comment %} 动态生成正确链接 {% endcomment %}
+                          {% if forloop.last %}
+                              <span class="current-segment">
+                                  {{ segment | replace: '-', ' ' | capitalize }}
+                              </span>
+                          {% else %}
+                              <a href="{{ current_path | append: '/' | relative_url }}" class="path-link">
+                                  {{ segment | replace: '-', ' ' | capitalize }}
+                              </a>
+                          {% endif %}
+                      {% endif %}
+                  {% endfor %}
+              </nav>
             </div>
 
             <!-- GitHub 个人链接 -->
