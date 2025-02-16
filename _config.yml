@@ -20,7 +20,3 @@ kramdown:
 
 head_scripts:
   - /assets/css/custom.css  # 新增自定义样式
-
-# _config.yml
-url: "https://rouge3877.github.io"
-baseurl: "https://rouge3877.github.io/"
